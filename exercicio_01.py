@@ -1,11 +1,11 @@
 def main():
     print("--- Exercício 01 ---")
-    vetor = []
+    vetor = [0] * 10
     for i in range(10):
         while True:
             try:
                 num = int(input(f"Digite o {i+1}º número inteiro: "))
-                vetor.append(num)
+                vetor[i] = num
                 break
             except ValueError:
                 print("Valor inválido. Por favor, digite um número inteiro.")

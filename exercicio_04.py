@@ -1,12 +1,12 @@
 def main():
     print("--- Exercício 04 ---")
-    vetor = []
+    vetor = [0] * 10
     
     for i in range(10):
         while True:
             try:
                 num = int(input(f"Digite o {i+1}º número inteiro: "))
-                vetor.append(num)
+                vetor[i] = num
                 break
             except ValueError:
                 print("Por favor, digite um número inteiro.")
@@ -15,14 +15,13 @@ def main():
     soma_impares = 0
     tem_par = False
     
-    for num in vetor:
-        if num % 2 == 0:
-            multiplicacao_pares *= num
+    for i in range(10):
+        if vetor[i] % 2 == 0:
+            multiplicacao_pares = multiplicacao_pares * vetor[i]
             tem_par = True
         else:
-            soma_impares += num
-
-    # Se não houver números pares, a multiplicação exibida seria 1, porém faz mais sentido ser 0
+            soma_impares = soma_impares + vetor[i]
+            
     if not tem_par:
         multiplicacao_pares = 0
         

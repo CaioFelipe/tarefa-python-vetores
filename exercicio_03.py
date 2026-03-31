@@ -1,6 +1,6 @@
 def main():
     print("--- Exercício 03 ---")
-    vetor = []
+    vetor = [0.0] * 20 
     
     while True:
         try:
@@ -9,16 +9,14 @@ def main():
         except ValueError:
             print("Valor inválido.")
 
-    vetor.append(primeiro_valor)
+    vetor[0] = primeiro_valor
     
     for i in range(1, 20):
-        # Cada posição é o dobro da anterior
-        proximo_valor = vetor[-1] * 2
-        vetor.append(proximo_valor)
+        vetor[i] = vetor[i - 1] * 2
         
     print("\nVetor após preenchimento (20 posições):")
-    for i, valor in enumerate(vetor):
-        print(f"Posição {i+1}: {valor}")
+    for i in range(20):
+        print(f"Posição {i+1}: {vetor[i]}")
 
 if __name__ == "__main__":
     main()

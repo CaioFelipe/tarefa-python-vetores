@@ -1,13 +1,13 @@
 def main():
     print("--- Exercício 05 ---")
-    vetor = []
+    vetor = [0] * 15
     
     print("Digite 15 números inteiros para o vetor:")
     for i in range(15):
         while True:
             try:
                 num = int(input(f"Posição {i+1}: "))
-                vetor.append(num)
+                vetor[i] = num
                 break
             except ValueError:
                 print("Por favor, digite um número inteiro.")
@@ -19,8 +19,10 @@ def main():
         except ValueError:
             print("Por favor, digite um valor inteiro para X.")
 
-    # Verifica quantas vezes X aparece no vetor
-    ocorrencias = vetor.count(x)
+    ocorrencias = 0
+    for i in range(15):
+        if vetor[i] == x:
+            ocorrencias = ocorrencias + 1
     
     print("\nVetor:", vetor)
     if ocorrencias > 0:
